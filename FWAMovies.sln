@@ -1,0 +1,60 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2015
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FWAMovies", "FWAMovies\FWAMovies.csproj", "{E918CD5F-81A1-4713-9DAE-94A77272F44C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FWAMovies.Tests", "FWAMovies.Tests\FWAMovies.Tests.csproj", "{74FCA387-E44F-446E-9DD1-1FFA18D7C53F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FWAMovies.Model", "FWAMovies.Model\FWAMovies.Model.csproj", "{43AA2E10-04F9-49D3-A4BC-2DDCCA4940B1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FWAMovies.DAL", "FWAMovies.DAL\FWAMovies.DAL.csproj", "{6C59F200-1E3A-4741-9BFE-53F2BCCD0325}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FWAMovies.BusinessService", "FWAMovies.BusinessService\FWAMovies.BusinessService.csproj", "{21B8A99F-6811-4D68-85BB-2B9366E509B0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FWAMovies.ViewService", "FWAMovies.ViewService\FWAMovies.ViewService.csproj", "{4C29EBED-67C9-4CA5-B673-B5C4A73FE52C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ReadmeSolution Items", "ReadmeSolution Items", "{6EFE00D3-8EFF-4AEB-84A1-33034F79B86D}"
+	ProjectSection(SolutionItems) = preProject
+		ReadMe.txt = ReadMe.txt
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E918CD5F-81A1-4713-9DAE-94A77272F44C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E918CD5F-81A1-4713-9DAE-94A77272F44C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E918CD5F-81A1-4713-9DAE-94A77272F44C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E918CD5F-81A1-4713-9DAE-94A77272F44C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{74FCA387-E44F-446E-9DD1-1FFA18D7C53F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74FCA387-E44F-446E-9DD1-1FFA18D7C53F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74FCA387-E44F-446E-9DD1-1FFA18D7C53F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74FCA387-E44F-446E-9DD1-1FFA18D7C53F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{43AA2E10-04F9-49D3-A4BC-2DDCCA4940B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{43AA2E10-04F9-49D3-A4BC-2DDCCA4940B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{43AA2E10-04F9-49D3-A4BC-2DDCCA4940B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{43AA2E10-04F9-49D3-A4BC-2DDCCA4940B1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6C59F200-1E3A-4741-9BFE-53F2BCCD0325}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C59F200-1E3A-4741-9BFE-53F2BCCD0325}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C59F200-1E3A-4741-9BFE-53F2BCCD0325}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C59F200-1E3A-4741-9BFE-53F2BCCD0325}.Release|Any CPU.Build.0 = Release|Any CPU
+		{21B8A99F-6811-4D68-85BB-2B9366E509B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21B8A99F-6811-4D68-85BB-2B9366E509B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21B8A99F-6811-4D68-85BB-2B9366E509B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21B8A99F-6811-4D68-85BB-2B9366E509B0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C29EBED-67C9-4CA5-B673-B5C4A73FE52C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C29EBED-67C9-4CA5-B673-B5C4A73FE52C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C29EBED-67C9-4CA5-B673-B5C4A73FE52C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C29EBED-67C9-4CA5-B673-B5C4A73FE52C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B5916738-0839-441D-A36D-EA482A5D947B}
+	EndGlobalSection
+EndGlobal
