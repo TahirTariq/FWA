@@ -1,7 +1,8 @@
 ﻿
-namespace FWAMovies.Model.Dto
+
+namespace FWAMovies.ViewService.ViewModel
 {
-    public class MovieFilter
+    public class MovieFilterViewModel
     {
         public string Title { get; set; }
 

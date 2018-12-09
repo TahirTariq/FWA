@@ -46,11 +46,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Interface\IMovieValidationService.cs" />
     <Compile Include="Interface\IMovieViewService.cs" />
     <Compile Include="AutoMapperProfiles\MovieModelProfile.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service\MovieValidationService.cs" />
     <Compile Include="Service\MovieViewService.cs" />
+    <Compile Include="ViewModel\MovieFilterViewModel.cs" />
     <Compile Include="ViewModel\MovieViewModel.cs" />
+    <Compile Include="ViewModel\UserMovieReviewViewModel.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

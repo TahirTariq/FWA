@@ -1,14 +1,14 @@
-﻿using FWAMovies.Model;
+﻿using FWAMovies.DAL.Interface;
+using FWAMovies.Model;
 using System.Data.Entity;
 
-namespace FWAMovies.DAL
+namespace FWAMovies.DAL.Context
 {
-    public class MovieContext : DbContext
+    public class MovieContext : DbContext, IMovieContext
     {
-        public MovieContext() : base("FWAMoviesDb")
+        public MovieContext(string connnectionString) : base(connnectionString)
         {
-            // Expecting changes during design phase.
-            Database.SetInitializer(new DropCreateDatabaseAlways<MovieContext>());
+            Database.SetInitializer(new FWAMoviesDBInitializer<MovieContext>());
         }
 
         public DbSet<Movie> Movies { get; set; }

@@ -1,4 +1,6 @@
-﻿using System.Web.Http;
+﻿using AutoMapper;
+using FWAMovies.App_Start;
+using System.Web.Http;
 
 namespace FWAMovies
 {
@@ -8,6 +10,8 @@ namespace FWAMovies
         {
             GlobalConfiguration.Configure(WebApiConfig.Register);
             GlobalConfiguration.Configure(FormattersConfig.Register);
+            GlobalConfiguration.Configure(UnityContainerConfig.Register);
+            Mapper.Initialize(AutoMapperRegisterProfiles.RegisterProfiles);
         }
     }
 }

@@ -1,11 +1,12 @@
-﻿using FWAMovies.DAL.Interface;
+﻿using FWAMovies.DAL.Context;
+using FWAMovies.DAL.Interface;
 using FWAMovies.Model;
 
 namespace FWAMovies.DAL.Repository
 {
-    public class UserRepository : Repository<MovieContext, User>, IUserRepository
+    public class UserRepository : Repository<IMovieContext, User>, IUserRepository
     {
-        public UserRepository(MovieContext context) : base(context)
+        public UserRepository(IMovieContext context) : base(context)
         {
         }
     }

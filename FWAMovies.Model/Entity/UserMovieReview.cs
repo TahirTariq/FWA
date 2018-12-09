@@ -10,5 +10,9 @@ namespace FWAMovies.Model
         public int MovieID { get; set; }
 
         public float Rating { get; set; }
+
+        public User UserReview { get; set; }
+
+        public Movie ReviewMovie { get; set; }
     }
 }

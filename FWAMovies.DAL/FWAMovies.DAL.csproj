@@ -49,12 +49,16 @@
   <ItemGroup>
     <Compile Include="Context\FWAMoviesDBInitializer.cs" />
     <Compile Include="Context\MovieContext.cs" />
+    <Compile Include="Interface\IDbContext.cs" />
+    <Compile Include="Interface\IMovieContext.cs" />
     <Compile Include="Interface\IMovieRepository.cs" />
     <Compile Include="Interface\IRepository.cs" />
     <Compile Include="Interface\IUserRepository.cs" />
+    <Compile Include="Interface\IUserMovieReviewRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\MovieRepository.cs" />
     <Compile Include="Repository\Repository.cs" />
+    <Compile Include="Repository\UserMovieReviewRepository.cs" />
     <Compile Include="Repository\UserRepository.cs" />
   </ItemGroup>
   <ItemGroup>

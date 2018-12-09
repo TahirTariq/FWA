@@ -12,11 +12,7 @@ namespace FWAMovies.Resolver
 
         public UnityResolver(IUnityContainer container)
         {
-            if (container == null)
-            {
-                throw new ArgumentNullException("container");
-            }
-            this.container = container;
+            this.container = container ?? throw new ArgumentNullException("container");
         }
 
         public object GetService(Type serviceType)

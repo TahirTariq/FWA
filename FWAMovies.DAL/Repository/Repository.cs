@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 namespace FWAMovies.DAL.Repository
 {
     public class Repository<TContext, TEntity> : IRepository<TEntity>
-        where TContext : DbContext
+        where TContext : IDbContext
         where TEntity : class, IEntity
     {
         protected readonly TContext context;
@@ -20,6 +20,8 @@ namespace FWAMovies.DAL.Repository
         {
             this.context = context;
         }
+
+        public object Context() => context;
 
         protected virtual IQueryable<TEntity> GetQueryable(
             Expression<Func<TEntity, bool>> filter = null,
@@ -105,20 +107,14 @@ namespace FWAMovies.DAL.Repository
         public virtual TEntity GetById(object id)
         {
             return context.Set<TEntity>().Find(id);
-        }
+        }     
 
-        public virtual Task<TEntity> GetByIdAsync(object id)
-        {
-            return context.Set<TEntity>().FindAsync(id);
-        }
-
-        public virtual void Create(TEntity entity, string createdBy = null)
-
+        public virtual void Create(TEntity entity)
         {
             context.Set<TEntity>().Add(entity);
         }
 
-        public virtual void Update(TEntity entity, string modifiedBy = null)
+        public virtual void Update(TEntity entity)
         {
             context.Set<TEntity>().Attach(entity);
             context.Entry(entity).State = EntityState.Modified;

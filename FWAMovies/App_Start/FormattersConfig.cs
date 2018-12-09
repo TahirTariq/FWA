@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
+using System.Net.Http.Headers;
 using System.Web.Http;
 
 namespace FWAMovies
@@ -12,9 +13,13 @@ namespace FWAMovies
             formatter.SerializerSettings = new JsonSerializerSettings
             {
                 Formatting = Formatting.Indented,
-                TypeNameHandling = TypeNameHandling.Objects,
-                ContractResolver = new CamelCasePropertyNamesContractResolver()
+                TypeNameHandling = TypeNameHandling.None,
+                ContractResolver = new CamelCasePropertyNamesContractResolver(),
+                PreserveReferencesHandling = PreserveReferencesHandling.None             
             };
+
+            //Forces JSON Response
+            formatter.SupportedMediaTypes.Add(new MediaTypeHeaderValue("text/html"));
 
             var xml = GlobalConfiguration.Configuration.Formatters.XmlFormatter;
             xml.UseXmlSerializer = true;
