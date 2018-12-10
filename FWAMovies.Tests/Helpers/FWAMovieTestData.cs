@@ -44,7 +44,6 @@ namespace FWAMovies.Tests.Helpers
             return movies;
         }
 
-
         public static List<UserMovieReview> GetUserMovieReviews()
         {
             var reviews = new List<UserMovieReview>()

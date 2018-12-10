@@ -25,11 +25,11 @@ namespace FWAMovies.ViewService.Service
 
         public IEnumerable<MovieViewModel> GetMoviesBy(MovieFilterViewModel filter)
         {
-            var movieFilter = AutoMapper.Mapper.Map<MovieFilter>(filter);
+            var movieFilter = Mapper.Map<MovieFilter>(filter);
 
-            IEnumerable<Movie> model = _movieBusinessService.GetTopMovies();
+            IEnumerable<Movie> model = _movieBusinessService.GetMoviesBy(movieFilter);
 
-            return AutoMapper.Mapper.Map<IEnumerable<MovieViewModel>>(model);
+            return Mapper.Map<IEnumerable<MovieViewModel>>(model);
         }
 
         public IEnumerable<MovieViewModel> GetTopMoviesByUserScore(int userId)

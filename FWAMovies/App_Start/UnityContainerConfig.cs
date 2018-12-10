@@ -31,7 +31,9 @@ namespace FWAMovies.App_Start
             container.RegisterType<IUserRepository, UserRepository>();
             container.RegisterType<IUserMovieReviewRepository, UserMovieReviewRepository>();
             container.RegisterType<IMovieBusinessService, MovieBusinessService>(new HierarchicalLifetimeManager());
-            
+
+            //container.RegisterType<IMovieBusinessService, MovieBusinessServiceAlternate>(new HierarchicalLifetimeManager());
+
             container.RegisterType<IMovieValidationService, MovieValidationService>(new HierarchicalLifetimeManager());
             container.RegisterType<IMovieViewService, MovieViewService>(new HierarchicalLifetimeManager());
             container.RegisterType<MoviesController>(new HierarchicalLifetimeManager());

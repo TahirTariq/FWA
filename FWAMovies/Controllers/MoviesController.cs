@@ -8,7 +8,7 @@ using System.Web.Http;
 
 namespace FWAMovies.Controllers
 {
-    [RoutePrefix("movies")]
+
     public class MoviesController : ApiController
     {
         public MoviesController
@@ -24,9 +24,9 @@ namespace FWAMovies.Controllers
         protected IMovieViewService MovieViewService { get; }
         protected IMovieValidationService MovieValidationService { get; }
 
+        [Route("api/movies/filter")]
         [HttpGet]
-        [Route("filter")]
-        public IHttpActionResult GetMoviesBy(MovieFilterViewModel filter)
+        public IHttpActionResult GetMoviesBy([FromUri] MovieFilterViewModel filter)
         {
             bool isModelValid = MovieValidationService.IsValid(filter);
 
@@ -43,8 +43,9 @@ namespace FWAMovies.Controllers
             return Ok(filterResult);
         }
 
+        [Route("api/movies/top")]
+        [Route("api/movies")]
         [HttpGet]
-        [Route("top")]
         public IHttpActionResult GetTopMovies()
         {
             IEnumerable<MovieViewModel> result = MovieViewService.GetTopMovies();
@@ -55,8 +56,8 @@ namespace FWAMovies.Controllers
             return Ok(result);
         }
 
+        [Route("api/movies/user/{userId}")]
         [HttpGet]
-        [Route("topUser/{id}")]
         public IHttpActionResult GetTopMoviesByUser(int userId)
         {
             IEnumerable<MovieViewModel> result = MovieViewService.GetTopMoviesByUserScore(userId);

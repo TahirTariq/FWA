@@ -132,7 +132,6 @@
   <ItemGroup>
     <Compile Include="App_Start\AutoMapperRegisterProfiles.cs" />
     <Compile Include="App_Start\FormattersConfig.cs" />
-    <Compile Include="App_Start\UnityConfig.cs" />
     <Compile Include="App_Start\UnityContainerConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\MoviesController.cs" />
@@ -153,7 +152,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\FWAMovies.BusinessService\FWAMovies.BusinessService.csproj">

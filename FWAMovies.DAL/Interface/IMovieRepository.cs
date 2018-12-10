@@ -1,4 +1,5 @@
 ﻿using FWAMovies.Model;
+using FWAMovies.Model.Dto;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -19,5 +20,12 @@ namespace FWAMovies.DAL.Interface
         /// </summary>
         /// <returns><see cref="IEnumerable<Movie>"/></returns>
         IEnumerable<Movie> GetTopMoviesByUserScore(int userId);
+
+        /// <summary>
+        /// Search list of movies based on search filter criteria
+        /// </summary>
+        /// <param name="filter"></param>
+        /// <returns></returns>
+        IEnumerable<Movie> GetMoviesBy(MovieFilter filter);
     }
 }

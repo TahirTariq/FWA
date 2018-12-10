@@ -40,9 +40,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Extensions\PredicateBuilder.cs" />
+    <Compile Include="Extensions\ReplaceVisitor.cs" />
     <Compile Include="Interface\IMovieBusinessService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service\MovieBusinessService.cs" />
+    <Compile Include="Service\MovieBusinessServiceAlternate.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\FWAMovies.DAL\FWAMovies.DAL.csproj">

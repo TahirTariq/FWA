@@ -62,17 +62,17 @@ namespace FWAMovies.DAL.Context
         protected List<UserMovieReview> GetUserMovieReviews()
         {
             var reviews = new List<UserMovieReview>()
-            {
-               new UserMovieReview{ UserID = 1, MovieID = 8, Rating = 1.63F},
-               new UserMovieReview{ UserID = 2, MovieID = 7, Rating = 2.31F},
-               new UserMovieReview{ UserID = 3, MovieID = 6, Rating = 3.81F},
-               new UserMovieReview{ UserID = 4, MovieID = 5, Rating = 3.75F},
-               new UserMovieReview{ UserID = 5, MovieID = 4, Rating = 3.60F},
-               new UserMovieReview{ UserID = 6, MovieID = 3, Rating = 3.25F},
-               new UserMovieReview{ UserID = 7, MovieID = 2, Rating = 3.249F},
-               new UserMovieReview{ UserID = 8, MovieID = 1, Rating = 2.91F},
-               new UserMovieReview{ UserID = 9, MovieID = 8, Rating = 1.63F},
-            };
+                {
+                   new UserMovieReview{ UserID = 1, MovieID = 8, Rating = 3.50F},
+                   new UserMovieReview{ UserID = 1, MovieID = 7, Rating = 1.60F},
+                   new UserMovieReview{ UserID = 1, MovieID = 5, Rating = 3.60F},
+                   new UserMovieReview{ UserID = 1, MovieID = 3, Rating = 4.60F},
+                   new UserMovieReview{ UserID = 3, MovieID = 6, Rating = 1.60F},
+                   new UserMovieReview{ UserID = 5, MovieID = 4, Rating = 2.60F},
+                   new UserMovieReview{ UserID = 7, MovieID = 2, Rating = 3.50F},
+                   new UserMovieReview{ UserID = 8, MovieID = 1, Rating = 3.90F},
+                   new UserMovieReview{ UserID = 9, MovieID = 8, Rating = 1.40F}
+                };
 
             return reviews;
         }

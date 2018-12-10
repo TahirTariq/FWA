@@ -1,5 +1,4 @@
-﻿using FWAMovies.BusinessService.Extensions;
-using FWAMovies.BusinessService.Interface;
+﻿using FWAMovies.BusinessService.Interface;
 using FWAMovies.DAL.Interface;
 using FWAMovies.Model;
 using FWAMovies.Model.Dto;
@@ -8,9 +7,13 @@ using System.Linq;
 
 namespace FWAMovies.BusinessService.Service
 {
-    public class MovieBusinessService : IMovieBusinessService
+    /// <summary>
+    /// This is an alternate implementatin of <see cref="MovieBusinessService"/>
+    /// that instead uses specific repository methods than generic.
+    /// </summary>
+    public class MovieBusinessServiceAlternate : IMovieBusinessService
     {
-        public MovieBusinessService
+        public MovieBusinessServiceAlternate
         (
             IMovieRepository movieRepositoryArg,
             IUserRepository userRepository,
@@ -28,7 +31,6 @@ namespace FWAMovies.BusinessService.Service
 
         protected IUserMovieReviewRepository UserMovieReviewRepository { get; }
 
-
         // TODO: should go in UserBusinessService
         public User GetUserById(int userId)
         {
@@ -42,67 +44,36 @@ namespace FWAMovies.BusinessService.Service
 
         public IEnumerable<Movie> GetTopMovies()
         {
-            return MovieRepository.Get
-            (
-                orderBy: f => f.OrderByDescending(m => m.AverageRating)
-                               .ThenBy(m => m.Title),
-                take: 5
-            );
+            IEnumerable<Movie> result = MovieRepository
+                  .GetMovies()
+                  .OrderByDescending(m => m.AverageRating)
+                  .ThenBy(m => m.Title)
+                  .Take(5);
+
+            return result;
         }
 
-        /// <summary>
-        /// Playing with my generic repository
-        /// </summary>
-        /// <param name="userId"></param>
-        /// <returns></returns>
         public IEnumerable<Movie> GetTopMoviesByUserScore(int userId)
         {
-            return MovieRepository.Get
-            (
-                filter: movie => movie.Reviews.Any(r=> r.UserID == userId),
-                orderBy: o => o.OrderByDescending(m => m.Reviews.FirstOrDefault().Rating)
-                               .ThenBy(m => m.Title),
-                includeProperties: "Reviews",
-                take: 5
-            );
+            return MovieRepository.GetTopMoviesByUserScore(userId);
         }
 
         public IEnumerable<Movie> GetMoviesBy(MovieFilter filter)
         {
-            var predicate = PredicateBuilder.True<Movie>();
-
-            if (!string.IsNullOrWhiteSpace(filter.Title))
-            {
-                predicate = predicate.Or(m => m.Title.Contains(filter.Title));
-            }
-
-            if (filter.YearOfRelease != null)
-            {
-                predicate = predicate.Or(m => m.YearOfRelease == filter.YearOfRelease);
-            }
-
-            if (filter.Genre != null && filter.Genre.Length > 0)
-            {
-                foreach (string genre in filter.Genre)
-                {
-                    predicate = predicate.Or(m => m.Genres.Contains(genre));
-                }
-            }
-
-            return MovieRepository.Get
-            (
-                filter: predicate,
-                orderBy: o => o.OrderByDescending(m => m.AverageRating)
-                               .ThenBy(m => m.Title)
-            );
+            return MovieRepository.GetMoviesBy(filter);
         }
 
+        /// <summary>
+        /// TODO: need to convert into specific repository calls.
+        /// </summary>
+        /// <param name="userReview"></param>
+        /// <returns></returns>
         public UserMovieReview SubmitUserMovieReview(UserMovieReview userReview)
         {
             var existingReview = UserMovieReviewRepository.Get(
                 filter: f => f.UserID == userReview.UserID &&
                             f.MovieID == userReview.MovieID).FirstOrDefault();
-           
+
             Movie movie = MovieRepository.GetById(userReview.MovieID);
             movie.AverageRating = CalculateMovieRatingAverage(movie, existingReview, userReview);
 
@@ -149,6 +120,6 @@ namespace FWAMovies.BusinessService.Service
             float newScore = totalScore / numberOfUsersReviews;
 
             return newScore;
-        }    
+        }   
     }
 }
